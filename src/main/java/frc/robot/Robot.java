@@ -4,7 +4,9 @@
 
 package frc.robot;
 
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -17,13 +19,21 @@ import edu.wpi.first.wpilibj.TimedRobot;
  */
 public class Robot extends TimedRobot {
 
+Joystick testJoystick;
+
+
+
+
   /**
    * This function is run when the robot is first started up and should be used
    * for any
    * initialization code.
    */
   @Override
-  public void robotInit() {}
+  public void robotInit() {
+    testJoystick = new Joystick(0);
+    
+  }
 
   /**
    * This function is called every 20 ms, no matter the mode. Use this for items
@@ -36,7 +46,10 @@ public class Robot extends TimedRobot {
    * SmartDashboard integrated updating.
    */
   @Override
-  public void robotPeriodic() {}
+  public void robotPeriodic() {
+    boolean triggerButton = testJoystick.getRawButton(1);
+    SmartDashboard.putBoolean("Button Pressed", triggerButton);
+  }
 
   /** This function is called once when autonomous is enabled. */
   @Override
@@ -78,3 +91,7 @@ public class Robot extends TimedRobot {
   @Override
   public void simulationPeriodic() {}
 }
+
+
+//xyz
+//xyz
