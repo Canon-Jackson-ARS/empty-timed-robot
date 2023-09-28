@@ -48,7 +48,28 @@ Joystick testJoystick;
   @Override
   public void robotPeriodic() {
     boolean triggerButton = testJoystick.getRawButton(1);
-    SmartDashboard.putBoolean("Button Pressed", triggerButton);
+    SmartDashboard.putBoolean("Button", triggerButton);
+
+    boolean pressed = testJoystick.getRawButtonPressed(1);
+    SmartDashboard.putBoolean("pressed", pressed);
+
+    boolean released = testJoystick.getRawButtonReleased(1);
+    SmartDashboard.putBoolean("released", released);
+
+    boolean Button2 = testJoystick.getRawButton(2);
+    SmartDashboard.putBoolean("Button2", Button2);
+
+    boolean released2 = testJoystick.getRawButtonPressed(2);
+    SmartDashboard.putBoolean("released2", released2);
+
+    boolean pressed2 = testJoystick.getRawButtonReleased(2);
+    SmartDashboard.putBoolean("pressed2", pressed2);
+  
+  double axis0 = testJoystick.getRawAxis(0);
+  SmartDashboard.putNumber("Axis 0", axis0);
+
+  int pov = testJoystick.getPOV();
+  SmartDashboard.putNumber("POV", pov);
   }
 
   /** This function is called once when autonomous is enabled. */
